@@ -9,9 +9,14 @@
 /**
  * 
  */
+class AArenaPlayerStart;
 UCLASS()
 class SMASHUE_API AAMatchGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
+public:
+	virtual void BeginPlay() override;
 	
+private :
+	void FindPlayerStartActorInArena(TArray<AArenaPlayerStart*>& ResultActors);
 };
