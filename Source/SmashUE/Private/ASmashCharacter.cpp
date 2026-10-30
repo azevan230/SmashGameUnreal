@@ -4,7 +4,7 @@
 #include "ASmashCharacter.h"
 
 // Sets default values
-AASmashCharacter::AASmashCharacter()
+ASmashCharacter::ASmashCharacter()
 {
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
@@ -12,21 +12,21 @@ AASmashCharacter::AASmashCharacter()
 }
 
 // Called when the game starts or when spawned
-void AASmashCharacter::BeginPlay()
+void ASmashCharacter::BeginPlay()
 {
 	Super::BeginPlay();
 	
 }
 
 // Called every frame
-void AASmashCharacter::Tick(float DeltaTime)
+void ASmashCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
 }
 
 // Called to bind functionality to input
-void AASmashCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
+void ASmashCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 

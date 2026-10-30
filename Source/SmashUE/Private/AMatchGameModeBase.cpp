@@ -2,7 +2,7 @@
 #include "Arena/arenaPlayerStart.h"
 #include "Kismet/GameplayStatics.h"
 
-void AAMatchGameModeBase::FindPlayerStartActorInArena(TArray<AArenaPlayerStart*>& ResultsActors)
+void AMatchGameModeBase::FindPlayerStartActorInArena(TArray<AArenaPlayerStart*>& ResultsActors)
 {
 	TArray<AActor*> FoundActors;
 	UGameplayStatics::GetAllActorsOfClass(GetWorld(), AArenaPlayerStart::StaticClass() ,FoundActors);
@@ -16,7 +16,7 @@ void AAMatchGameModeBase::FindPlayerStartActorInArena(TArray<AArenaPlayerStart*>
 	}
 }
 
-void AAMatchGameModeBase::BeginPlay()
+void AMatchGameModeBase::BeginPlay()
 {
 	Super::BeginPlay();
 	
@@ -31,5 +31,21 @@ void AAMatchGameModeBase::BeginPlay()
 		FColor::Cyan,
 		PlayerStartPoint->GetFName().ToString()
 		);	
+	}
+	TSubclassOf<ASmashCharacter> AMatchGameModeBase::GetSmashCharacterClassFromInputType(EAutoReceiveInput::Type InputType) const
+	{
+		switch (InputType)
+		{
+		case EAutoReceiveInput::Player0:
+			return SmashCharacterClassP0;
+		case EAutoReceiveInput::Player1:
+			return SmashCharacterClassP1;
+		case EAutoReceiveInput::Player2:
+			return SmashCharacterClassP2;
+		case EAutoReceiveInput::Player3:
+			return SmashCharacterClassP3;
+		default:
+			return nullptr;
+		}
 	}
 }

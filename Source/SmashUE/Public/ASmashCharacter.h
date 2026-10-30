@@ -7,13 +7,13 @@
 #include "ASmashCharacter.generated.h"
 
 UCLASS()
-class SMASHUE_API AASmashCharacter : public ACharacter
+class SMASHUE_API ASmashCharacter : public ACharacter
 {
 	GENERATED_BODY()
 
 public:
 	// Sets default values for this character's properties
-	AASmashCharacter();
+	ASmashCharacter();
 
 protected:
 	// Called when the game starts or when spawned
