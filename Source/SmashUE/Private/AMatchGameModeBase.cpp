@@ -71,6 +71,7 @@ void AMatchGameModeBase::SpawnCharacters(const TArray<AArenaPlayerStart*>& Spawn
 		SpawnPoint->GetTransform());
 		
 		if (NewCharacter == nullptr) continue;
+		NewCharacter->AutoPossessPlayer = SpawnPoint->AutoReceiveInput;
 		NewCharacter->SetOrientX(SpawnPoint->GetStartOrientX());
 		NewCharacter->FinishSpawning(SpawnPoint->GetTransform());
 		
