@@ -21,6 +21,12 @@ void ASmashCharacter::BeginPlay()
 	InitStateMachine();
 }
 
+void ASmashCharacter::TickStateMachine(float DeltaTime) const
+{
+	if (StateMachine == nullptr) return;
+	StateMachine->Tick(DeltaTime);
+}
+
 // Called every frame
 void ASmashCharacter::Tick(float DeltaTime)
 {
