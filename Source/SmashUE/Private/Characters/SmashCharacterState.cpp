@@ -29,6 +29,11 @@ void USmashCharacterState::StateInit(USmashCharacterStateMachine* InStateMachine
 		);
 }
 
+void USmashCharacterState::StateTick(float DeltaTime)
+{
+	
+}
+
 void USmashCharacterState::StateEnter(ESmashCharacterStateID PreviousStateID)
 {
 	

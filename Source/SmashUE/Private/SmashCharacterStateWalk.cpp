@@ -28,3 +28,15 @@ void USmashCharacterStateWalk::StateExit(ESmashCharacterStateID NextStateID)
 		TEXT("EXIT USmashCharacterStateWalk")
 		);
 }
+
+void USmashCharacterStateWalk::StateTick(float DeltaTime)
+{
+	Super::StateTick(DeltaTime);
+	
+	GEngine->AddOnScreenDebugMessage(
+		-1,
+		3.f,
+		FColor::Green,
+		TEXT("Tick StateWalk")
+		);
+}
